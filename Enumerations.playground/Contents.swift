@@ -88,3 +88,14 @@ enum PastaTypesC: Int {
 }
 
 print(PastaTypesC.penne.rawValue) // 1
+
+enum PastaTypesD: String, CaseIterable {
+    case spaghetti = "Spaghetti"
+    case penne      // penne = penne
+    case ravioli    // raviolo = raviolo
+    case rigatoni   // rigatoni = rigatoni
+}
+
+for pasta in PastaTypesD.allCases {
+    print("Food: \(pasta)")
+}
