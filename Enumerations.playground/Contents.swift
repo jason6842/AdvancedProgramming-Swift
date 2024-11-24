@@ -70,3 +70,21 @@ func checkIfCooked2(for pasta: PastaTypesB) {
 }
 
 checkIfCooked(for: .spaghetti(cookingTime: 7))
+
+enum Week:Int, CaseIterable {
+    case Monday = 1
+    case Tuesday, Wednesday // Tuesday = 2, Wednesday = 3
+}
+
+for day in Week.allCases {
+    print("\(day) is day \(day.rawValue) of the week")
+}
+
+enum PastaTypesC: Int {
+    case spaghetti  // 0
+    case penne      // 1
+    case ravioli    // 2
+    case rigatoni   // 3
+}
+
+print(PastaTypesC.penne.rawValue) // 1
