@@ -5,12 +5,19 @@
 //  Created by Jason Ma on 12/2/24.
 //
 
-import Testing
+import XCTest
+@testable import LittleLemon
 
-struct LittleLemonTests {
-
-    @Test func example() async throws {
-        // Write your test here and use APIs like `#expect(...)` to check expected conditions.
+final class LittleLemonTests: XCTestCase {
+    func test_recipeOrderCount_init_orderCountEqualsZero() {
+        let recipe = Recipe()
+        XCTAssert(recipe.orderCount == 0)
     }
-
+    func test_recipeOrderCount_incrementOrderCount_orderCountEqualsOne() {
+        var recipe = Recipe()
+        recipe.incrementOrderCount()
+        XCTAssert(recipe.orderCount == 1)
+    }
+    
 }
+
